@@ -1,0 +1,140 @@
+export const INITIAL_VEHICLES = [
+  {
+    id: "CR3W-001",
+    model: "Mahindra Treo Zor / Saarthi E-Rickshaw",
+    regNumber: "DL-1ER-4821",
+    bmsModel: "SecureCell SmartBMS Pro v3.2",
+    batterySpec: "48V 100Ah (4.8 kWh) LFP",
+    connectionType: "BLE 5.2 Secure Channel",
+    workshopStation: "Bay 1 - Karol Bagh Hub",
+    driverName: "Rajesh Kumar",
+    status: "Secure",
+    lastAssessed: "Today, 10:15 AM",
+    rawProfile: {
+      wirelessInterface: "BLE 5.2 (Whitelisted pairing only)",
+      authentication: "Authenticated Passkey (AES-128 Challenge)",
+      unauthorizedAccess: "Blocked (Mutual authentication enforced)",
+      safetyCommands: "Hardware Interlock & Protected Key",
+      configProtection: "Cryptographically Signed Config",
+      wirelessAccessControl: "Timeout after 60s inactivity",
+      firmwareAccess: "Signed Firmware verification with Rollback Guard"
+    },
+    isRemediated: false,
+    remediationHistory: []
+  },
+  {
+    id: "CR3W-002",
+    model: "Kinetic Safar Smart E-Rickshaw",
+    regNumber: "UP-14-BT-9102",
+    bmsModel: "JBD-SP04S Smart BMS v2.1",
+    batterySpec: "48V 80Ah (3.8 kWh) LFP",
+    connectionType: "BLE 4.2 Standard Broadcast",
+    workshopStation: "Bay 2 - Noida Sector 62",
+    driverName: "Amit Verma",
+    status: "Needs Attention",
+    lastAssessed: "Yesterday, 04:30 PM",
+    rawProfile: {
+      wirelessInterface: "BLE 4.2 (Public Open Broadcast)",
+      authentication: "Weak Static PIN (000000)",
+      unauthorizedAccess: "Possible via generic BLE scanner",
+      safetyCommands: "Rate-limited / Soft PIN Protected",
+      configProtection: "Basic Password Protection",
+      wirelessAccessControl: "Continuous advertisement when idle",
+      firmwareAccess: "Checksum Verified OTA (Partially Protected)"
+    },
+    isRemediated: false,
+    remediationHistory: []
+  },
+  {
+    id: "CR3W-003",
+    model: "Mayuri Deluxe Passenger E-Rickshaw",
+    regNumber: "DL-3ER-7749",
+    bmsModel: "Generic AntBMS BLE v1.8",
+    batterySpec: "48V 100Ah (4.8 kWh) NMC/LFP",
+    connectionType: "BLE 4.0 Open UART GATT",
+    workshopStation: "Bay 3 - Okhla Industrial Phase II",
+    driverName: "Mohammad Salim",
+    status: "High Risk",
+    lastAssessed: "2 days ago",
+    rawProfile: {
+      wirelessInterface: "BLE 4.0 (Open UART GATT Service Exposed)",
+      authentication: "Missing / Default Credentials",
+      unauthorizedAccess: "Open to any nearby smartphone scanner",
+      safetyCommands: "Exposed (Remote discharge cut-off & MOSFET trigger accessible)",
+      configProtection: "Unencrypted R/W parameters (Voltage/Current cutoffs writable)",
+      wirelessAccessControl: "Unrestricted beacon broadcast without pairing timeout",
+      firmwareAccess: "Unprotected Unsigned OTA update over BLE"
+    },
+    isRemediated: false,
+    remediationHistory: []
+  },
+  {
+    id: "CR3W-004",
+    model: "YC Electric Yatri Super E-Rickshaw",
+    regNumber: "HR-55-ER-3312",
+    bmsModel: "Daly Smart BMS 16S 60A",
+    batterySpec: "51.2V 105Ah (5.3 kWh) LFP",
+    connectionType: "BLE 4.2 Open Protocol",
+    workshopStation: "Bay 1 - Karol Bagh Hub",
+    driverName: "Sanjay Yadav",
+    status: "High Risk",
+    lastAssessed: "3 days ago",
+    rawProfile: {
+      wirelessInterface: "BLE 4.2 (Public UART Broadcast)",
+      authentication: "Default PIN (123456)",
+      unauthorizedAccess: "Open to generic scanning tools",
+      safetyCommands: "Exposed (Charge/Discharge switch writable)",
+      configProtection: "Weak XOR Obfuscation only",
+      wirelessAccessControl: "Always-on advertisement",
+      firmwareAccess: "Unsigned Binary Upload allowed"
+    },
+    isRemediated: false,
+    remediationHistory: []
+  },
+  {
+    id: "CR3W-005",
+    model: "Piaggio Ape E-City FX",
+    regNumber: "DL-8ER-1090",
+    bmsModel: "Exide Sunbrick BMS v4.0",
+    batterySpec: "48V 90Ah (4.3 kWh) LFP",
+    connectionType: "BLE 5.0 Encrypted",
+    workshopStation: "Bay 4 - Rohini Depot",
+    driverName: "Gurpreet Singh",
+    status: "Secure",
+    lastAssessed: "Today, 09:00 AM",
+    rawProfile: {
+      wirelessInterface: "BLE 5.0 (Bonded pairing required)",
+      authentication: "Authenticated PIN + Challenge Token",
+      unauthorizedAccess: "Blocked for non-bonded remotes",
+      safetyCommands: "Hardware Protected Interlock",
+      configProtection: "Encrypted Write Protection",
+      wirelessAccessControl: "Physical button-press required to enter pairing mode",
+      firmwareAccess: "Cryptographically Signed OTA"
+    },
+    isRemediated: false,
+    remediationHistory: []
+  },
+  {
+    id: "CR3W-006",
+    model: "CityLife Standard Passenger 3W",
+    regNumber: "UP-16-ER-6543",
+    bmsModel: "Jiabaida (JBD) SP15S001",
+    batterySpec: "48V 100Ah (4.8 kWh) LFP",
+    connectionType: "BLE 4.1 Generic GATT",
+    workshopStation: "Bay 2 - Noida Sector 62",
+    driverName: "Dinesh Chand",
+    status: "Needs Attention",
+    lastAssessed: "5 days ago",
+    rawProfile: {
+      wirelessInterface: "BLE 4.1 (Standard Service UUIDs)",
+      authentication: "Weak Single-factor PIN",
+      unauthorizedAccess: "Possible without physical proximity verification",
+      safetyCommands: "Protected by 4-digit code",
+      configProtection: "Weak PIN authorization for cell thresholds",
+      wirelessAccessControl: "Continuous beacon",
+      firmwareAccess: "CRC32 checksum verified only"
+    },
+    isRemediated: false,
+    remediationHistory: []
+  }
+];

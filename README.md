@@ -32,11 +32,17 @@ CyberRide 3W demonstrates how these concerns can be translated into a simple, ex
 
 CyberRide follows a five-stage workflow:
 
-1. **Assess** — Select a simulated e-rickshaw BMS profile and run the assessment.
+1. **Assess** — Select a simulated e-rickshaw BMS profile **or** complete the workshop intake (`/intake`) and run the assessment.
 2. **Explain** — Review findings, risk levels, and potential security implications.
 3. **Improve** — Follow the recommended remediation checklist.
 4. **Re-test** — Run a new simulated assessment and compare the results.
 5. **Report** — Review and print the Security Readiness Report.
+
+Hackathon jury pack:
+
+- **Methodology & Architecture Document (with Mermaid Diagrams)**: [`METHODOLOGY.md`](./METHODOLOGY.md)
+- Two-page case study: [`CASE_STUDY.md`](./CASE_STUDY.md)
+- Three-minute pitch: [`PITCH.md`](./PITCH.md)
 
 ---
 
@@ -44,14 +50,15 @@ CyberRide follows a five-stage workflow:
 
 | Component | Technology |
 |---|---|
-| Frontend | React + Vite |
+| Frontend | React 18 + Vite |
 | Styling | Tailwind CSS |
 | Icons | Lucide React |
 | Routing | React Router DOM |
-| State & Persistence | Browser Local Storage |
-| Assessment Engine | Deterministic, rule-based scoring |
-| Data | Simulated BMS profiles |
-| Report Export | Browser print functionality |
+| Backend & API | Node.js + Express (`server/index.js` on port 5001) |
+| Assessment Engine | Deterministic 5-stage weighted scoring pipeline |
+| Standards Alignment | AIS-156 (Amd 3), AIS-038 (Rev 2), ISO/SAE 21434, UNECE WP.29 R155 |
+| State & Dual-Mode | Express API with graceful offline browser fallback |
+| Report Export | Browser print functionality + CSV Export |
 
 The prototype uses transparent assessment rules rather than machine learning or an opaque prediction model. It is designed to run locally without backend or external API dependencies.
 
@@ -107,17 +114,26 @@ Install the dependencies:
 npm install
 ```
 
-Start the development server:
-
+Start the application:
+ 
 ```bash
+# Run both Backend API and Frontend UI simultaneously (Recommended):
+npm run dev:all
+
+# Or run frontend only (operates in offline browser mode):
 npm run dev
+
+# Or run the backend API server standalone:
+npm run server
 ```
 
-Open the local URL printed in your terminal, typically:
+Open the local application in your browser:
 
 ```text
 http://localhost:5173
 ```
+
+Backend REST API endpoints will be accessible at `http://localhost:5001/api`.
 
 > If you already have the project locally, skip the cloning step and run the installation commands from the project directory.
 

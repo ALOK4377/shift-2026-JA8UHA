@@ -9,7 +9,8 @@ import {
   Zap, 
   RotateCcw,
   Sparkles,
-  ExternalLink
+  ExternalLink,
+  ClipboardList
 } from "lucide-react";
 import { useToast } from "../context/ToastContext";
 import { resetFleetToInitial } from "../logic/storage";
@@ -27,6 +28,7 @@ export function Sidebar({ isOpen, onClose }) {
 
   const navLinks = [
     { to: "/dashboard", label: "Dashboard", icon: LayoutDashboard },
+    { to: "/intake", label: "Workshop Intake", icon: ClipboardList },
     { to: "/vehicles", label: "Vehicle Fleet", icon: Car },
     { to: "/fleet", label: "Fleet Security Overview", icon: BarChart3 },
     { to: "/settings", label: "Settings & Disclaimers", icon: Settings },

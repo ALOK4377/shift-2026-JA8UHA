@@ -12,6 +12,7 @@ import { Remediation } from "./pages/Remediation";
 import { Report } from "./pages/Report";
 import { Fleet } from "./pages/Fleet";
 import { Settings } from "./pages/Settings";
+import { WorkshopIntake } from "./pages/WorkshopIntake";
 import { EmptyState } from "./components/EmptyState";
 import { useNavigate } from "react-router-dom";
 
@@ -56,6 +57,7 @@ export function App() {
               <Route path="/remediation/:id" element={<Remediation />} />
               <Route path="/report/:id" element={<Report />} />
               <Route path="/fleet" element={<Fleet />} />
+              <Route path="/intake" element={<WorkshopIntake />} />
               <Route path="/settings" element={<Settings />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
